@@ -7,18 +7,22 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat;
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dagger.android.DaggerActivity;
+import javax.inject.Inject;
 import oleksii.melnykov.marvelcomics.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends DaggerActivity implements MainContract.View {
 
   public static Intent createNewIntent(Context context) {
     return new Intent(context, MainActivity.class);
   }
+
+  @Inject
+  MainContract.Presenter presenter;
 
   @BindView(R.id.activity_main_anim_logo)
   ImageView animLogo;
@@ -35,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
   }
 
   @Override
+  protected void onResume() {
+    super.onResume();
+    presenter.takeView(this);
+  }
+
+  @Override
   protected void onStart() {
     super.onStart();
     startAnimationDrawable(animLogo.getDrawable());
@@ -44,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
   protected void onStop() {
     super.onStop();
     stopAnimationDrawable(animLogo.getDrawable());
+  }
+
+  @Override
+  protected void onPause() {
+    super.onPause();
+    presenter.dropView();
   }
 
   private void startAnimationDrawable(Drawable drawable) {

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="primaryColor">#f43735</color>
-  <color name="primaryLightColor">#ff7060</color>
-  <color name="primaryDarkColor">#b9000d</color>
-  <color name="secondaryColor">#ffd24a</color>
-  <color name="secondaryLightColor">#ffff7c</color>
-  <color name="secondaryDarkColor">#c8a10b</color>
-  <color name="primaryTextColor">#000000</color>
+  <color name="primaryColor">#22262a</color>
+  <color name="primaryLightColor">#4a4e52</color>
+  <color name="primaryDarkColor">#000000</color>
+  <color name="secondaryColor">#ec1d24</color>
+  <color name="secondaryLightColor">#ff5f4e</color>
+  <color name="secondaryDarkColor">#b10000</color>
+  <color name="primaryTextColor">#ffffff</color>
   <color name="secondaryTextColor">#000000</color>
 
   <color name="launcherBackgroundColor">#EC1D24</color>
 
-  <color name="windowBackgroundColor">#9E8F8F</color>
+  <color name="windowBackgroundColor">#FFFFFF</color>
 
 </resources>
