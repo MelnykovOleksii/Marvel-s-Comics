@@ -19,6 +19,7 @@ android {
 
         buildConfigField 'String', "MarvelApiKeyPublic", marvel_api_key_public
         buildConfigField 'String', "MarvelApiKeyPrivate", marvel_api_key_private
+        buildConfigField 'String', "MarvelApiUrl", marvel_api_url
     }
 
     buildTypes {
@@ -59,4 +60,21 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.24'
     implementation 'com.google.dagger:dagger-android:2.24'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.24'
+
+    // RxJava2
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
+
+    // Room
+    implementation 'android.arch.persistence.room:runtime:2.0.0'
+    implementation 'android.arch.persistence.room:rxjava2:2.0.0'
+    annotationProcessor 'android.arch.persistence.room:compiler:2.0.0'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 }
